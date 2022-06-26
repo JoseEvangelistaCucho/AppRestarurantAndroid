@@ -28,7 +28,11 @@ namespace AppRestaurant.Controllers
         [HttpGet("id")]
         public IActionResult Get()
         {
-            return Ok("CHUPETIN VAS A CAERRRR!!!!!!!");
+            var Cliente = new Cliente();
+            Cliente.id = 1;
+            Cliente.FirstName = "CHUPETIN VAS A CAERRRR!!!!!!!";
+            Cliente.direction = "AAAAAAAAA";
+            return Ok(Cliente);
         }
 
 
