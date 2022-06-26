@@ -17,5 +17,11 @@ namespace AppRestaurant.Controllers
         {
             return Ok(_unit.Clientes.GetByDocumento(nroDocumento, password));
         }
+
+        [HttpGet("id")]
+        public IActionResult Get()
+        {
+            return Ok("HOLA MUNDO");
+        }
     }
 }

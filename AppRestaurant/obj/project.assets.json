@@ -2125,11 +2125,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repositorios\\Visual Studio\\Restaurant\\AppRestaurant\\AppRestaurant.csproj",
+      "projectUniqueName": "C:\\Users\\Joze\\Desktop\\Proyecto Android\\AppRestarurantAndroid\\AppRestaurant\\AppRestaurant.csproj",
       "projectName": "AppRestaurant",
-      "projectPath": "D:\\Repositorios\\Visual Studio\\Restaurant\\AppRestaurant\\AppRestaurant.csproj",
+      "projectPath": "C:\\Users\\Joze\\Desktop\\Proyecto Android\\AppRestarurantAndroid\\AppRestaurant\\AppRestaurant.csproj",
       "packagesPath": "C:\\Users\\Joze\\.nuget\\packages\\",
-      "outputPath": "D:\\Repositorios\\Visual Studio\\Restaurant\\AppRestaurant\\obj\\",
+      "outputPath": "C:\\Users\\Joze\\Desktop\\Proyecto Android\\AppRestarurantAndroid\\AppRestaurant\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\programacion\\Microsoft Visual Studio\\Shared\\NuGetPackages"

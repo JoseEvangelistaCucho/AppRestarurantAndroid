@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ov43vRK9bM1UdCEiFNGeKD5BsVqapP6xHV6GvmDI4ClFGcFbuDZgXCFxdrtz38TrOPumt7qdbLczNyP0nUgOJg==",
+  "dgSpecHash": "fV9yIbrzuYT0izyVYfER6VAyo4SQ2Z0fXEFh19hRo3/8l2IPGA8kzSkr1mdOMYP2iyFXQP1tOrLABJMHPctfLA==",
   "success": true,
-  "projectFilePath": "D:\\Repositorios\\Visual Studio\\Restaurant\\AppRestaurant\\AppRestaurant.csproj",
+  "projectFilePath": "C:\\Users\\Joze\\Desktop\\Proyecto Android\\AppRestarurantAndroid\\AppRestaurant\\AppRestaurant.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Joze\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Joze\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
