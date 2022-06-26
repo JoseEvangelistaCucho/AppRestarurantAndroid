@@ -3,5 +3,6 @@
     public interface IUnitOfWork
     {
         IClienteRepository Clientes { get; }
+        IParametroRepository Parametros { get; }
     }
 }

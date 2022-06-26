@@ -34,5 +34,35 @@ namespace AppRestaurant.Repository.Repository.Implement
                 return respuesta;
             }
         }
+
+        public ResponseHeader CreateUserCliente(Cliente cliente)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var respuesta = new ResponseHeader();
+                var parameters = new DynamicParameters();
+                int idClienteGenerado = 0;
+                parameters.Add(Constante.FIRSNAME, cliente.FirstName);
+                parameters.Add(Constante.LASTNAME, cliente.LastName);
+                parameters.Add(Constante.PASSWORD, cliente.PasswordUser);
+                parameters.Add(Constante.PHONE, cliente.Phone);
+                parameters.Add(Constante.DNI, cliente.dni);
+                parameters.Add(Constante.DIRECCTION, cliente.direction);
+                parameters.Add(Constante.TIPO, cliente.Tipo);
+                parameters.Add(Constante.OV_ESTADO, Constante.OV_ESTADO, System.Data.DbType.String, System.Data.ParameterDirection.Output);
+                parameters.Add(Constante.OV_MESSAGE, Constante.OV_MESSAGE, System.Data.DbType.String, System.Data.ParameterDirection.Output);
+                parameters.Add(Constante.IDCLIENTE, idClienteGenerado, System.Data.DbType.Int32, System.Data.ParameterDirection.Output);
+
+                connection.Query(Constante.NAME_USP_CREAR_CLIENTE, parameters, commandType: System.Data.CommandType.StoredProcedure);
+
+                idClienteGenerado = parameters.Get<Int32>(Constante.IDCLIENTE);
+                respuesta.Estado = parameters.Get<String>(Constante.OV_ESTADO);
+                respuesta.Mensaje = parameters.Get<String>(Constante.OV_MESSAGE);
+                cliente.id = idClienteGenerado;
+                respuesta.Detalle.Add(cliente.GetType().Name, cliente);
+
+                return respuesta;
+            }
+        }
     }
 }
