@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AppRestaurant.Controllers
 {
-    [Produces("application/json")]
+   /* [Produces("application/json")]
     [ApiController]
-    [EnableCors("AllowOrigin")]
+    [EnableCors("AllowOrigin")]*/
     public class BaseController : ControllerBase
     {
         protected IUnitOfWork _unit;
