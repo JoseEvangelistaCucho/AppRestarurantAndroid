@@ -12,7 +12,7 @@ namespace AppRestaurant.Controllers
         {
         }
                 
-        [HttpGet("{nroDocumento}/{password}")]
+        [HttpGet("UserLogin/{nroDocumento}/{password}")]
         public IActionResult Get(string nroDocumento, string password)
         {
             return Ok(_unit.Clientes.GetByDocumento(nroDocumento, password));
@@ -21,7 +21,9 @@ namespace AppRestaurant.Controllers
         [HttpGet("id")]
         public IActionResult Get()
         {
-            return Ok("HOLA MUNDO");
+            return Ok("CHUPETIN VAS A CAERRRR!!!!!!!");
         }
+
+    
     }
 }
