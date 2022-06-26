@@ -1,5 +1,6 @@
 ﻿using AppRestaurant.Models;
 using AppRestaurant.Repository.Repository.Implement;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AppRestaurant.Controllers

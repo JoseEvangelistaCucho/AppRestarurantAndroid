@@ -1,4 +1,5 @@
 ﻿using AppRestaurant.Repository.Repository.Implement;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 

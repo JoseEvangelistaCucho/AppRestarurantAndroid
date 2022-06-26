@@ -16,14 +16,28 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    /* app.UseSwagger();
+     app.UseSwaggerUI();*/
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AppRestaurant v1"));
 }
 
 app.UseHttpsRedirection();
 
+//app.UseAuthorization();
+
+//app.MapControllers();
+/**************/
+
+app.UseRouting();
+app.UseCors("AllowOrigin");
 app.UseAuthorization();
 
-app.MapControllers();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
+/************/
 app.Run();
