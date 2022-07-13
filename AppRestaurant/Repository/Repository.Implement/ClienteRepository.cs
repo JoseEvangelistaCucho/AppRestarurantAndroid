@@ -72,22 +72,48 @@ namespace AppRestaurant.Repository.Repository.Implement
             {
                 var respuesta = new ResponseHeader();
                 var parameters = new DynamicParameters();
-               // int idClienteGenerado = 0;
+                // int idClienteGenerado = 0;
                 parameters.Add(Constante.CODIGO, receta.Codigo);
                 parameters.Add(Constante.NOMBRE, receta.Nombre);
                 parameters.Add(Constante.INGREDIENTES, receta.Ingredientes);
                 parameters.Add(Constante.DURACION, receta.Duracion);
                 parameters.Add(Constante.OV_ESTADO, Constante.OV_ESTADO, System.Data.DbType.String, System.Data.ParameterDirection.Output);
                 parameters.Add(Constante.OV_MESSAGE, Constante.OV_MESSAGE, System.Data.DbType.String, System.Data.ParameterDirection.Output);
-               // parameters.Add(Constante.IDCLIENTE, idClienteGenerado, System.Data.DbType.Int32, System.Data.ParameterDirection.Output);
+                // parameters.Add(Constante.IDCLIENTE, idClienteGenerado, System.Data.DbType.Int32, System.Data.ParameterDirection.Output);
 
                 connection.Query(Constante.NAME_USP_CREAR_RECETA, parameters, commandType: System.Data.CommandType.StoredProcedure);
 
-               // idClienteGenerado = parameters.Get<Int32>(Constante.IDCLIENTE);
+                // idClienteGenerado = parameters.Get<Int32>(Constante.IDCLIENTE);
                 respuesta.Estado = parameters.Get<String>(Constante.OV_ESTADO);
                 respuesta.Mensaje = parameters.Get<String>(Constante.OV_MESSAGE);
-              //  cliente.id = idClienteGenerado;
-              //  respuesta.Detalle.Add(cliente.GetType().Name, cliente);
+                //  cliente.id = idClienteGenerado;
+                //  respuesta.Detalle.Add(cliente.GetType().Name, cliente);
+
+                return respuesta;
+            }
+        }
+        public ResponseHeader ModificarReceta(Receta receta)
+        {
+            using (var connection = new MySqlConnection(_connectionString))
+            {
+                var respuesta = new ResponseHeader();
+                var parameters = new DynamicParameters();
+                // int idClienteGenerado = 0;
+                parameters.Add(Constante.CODIGO, receta.Codigo);
+                parameters.Add(Constante.NOMBRE, receta.Nombre);
+                parameters.Add(Constante.INGREDIENTES, receta.Ingredientes);
+                parameters.Add(Constante.DURACION, receta.Duracion);
+                parameters.Add(Constante.OV_ESTADO, Constante.OV_ESTADO, System.Data.DbType.String, System.Data.ParameterDirection.Output);
+                parameters.Add(Constante.OV_MESSAGE, Constante.OV_MESSAGE, System.Data.DbType.String, System.Data.ParameterDirection.Output);
+                // parameters.Add(Constante.IDCLIENTE, idClienteGenerado, System.Data.DbType.Int32, System.Data.ParameterDirection.Output);
+
+                connection.Query(Constante.NAME_USP_MODIFICAR, parameters, commandType: System.Data.CommandType.StoredProcedure);
+
+                // idClienteGenerado = parameters.Get<Int32>(Constante.IDCLIENTE);
+                respuesta.Estado = parameters.Get<String>(Constante.OV_ESTADO);
+                respuesta.Mensaje = parameters.Get<String>(Constante.OV_MESSAGE);
+                //  cliente.id = idClienteGenerado;
+                //  respuesta.Detalle.Add(cliente.GetType().Name, cliente);
 
                 return respuesta;
             }

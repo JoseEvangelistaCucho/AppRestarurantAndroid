@@ -8,5 +8,7 @@ namespace AppRestaurant.Repository.Repository
         ResponseHeader GetByDocumento(string nroDocumento, string password);
         ResponseHeader CreateUserCliente(Cliente cliente);
         ResponseHeader CrearReceta(Receta receta);
+        ResponseHeader ModificarReceta(Receta receta);
+        
     }
 }

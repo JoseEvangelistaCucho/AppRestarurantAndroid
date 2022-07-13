@@ -28,7 +28,7 @@ namespace AppRestaurant.Models.ModelService
         public const string INGREDIENTES = "@Ingredientes";
         public const string DURACION = "@Duracion";
         public const string NAME_USP_CREAR_RECETA = "uspCrearReceta";
-
+        public const string NAME_USP_MODIFICAR = "EditarReceta";
 
 
 

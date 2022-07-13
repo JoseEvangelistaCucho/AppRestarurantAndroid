@@ -48,6 +48,12 @@ namespace AppRestaurant.Controllers
             return Ok(_unit.Clientes.CrearReceta(receta));
         }
 
+        [HttpPost("Receta/EditarReceta")]
+        public IActionResult GeReceta([FromBody] Receta receta)
+        {
+            return Ok(_unit.Clientes.ModificarReceta(receta));
+        }
+
 
 
     }
