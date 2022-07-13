@@ -1,5 +1,6 @@
 ﻿using Dapper.Contrib.Extensions;
 using Microsoft.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 
 namespace AppRestaurant.Repository.Repository.Implement
@@ -16,7 +17,7 @@ namespace AppRestaurant.Repository.Repository.Implement
 
         public bool Delete(T entity)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(_connectionString))
             {
                 return connection.Delete(entity);
             }
@@ -24,7 +25,7 @@ namespace AppRestaurant.Repository.Repository.Implement
 
         public T GetById(int id)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(_connectionString))
             {
                 return connection.Get<T>(id);
             }
@@ -32,7 +33,7 @@ namespace AppRestaurant.Repository.Repository.Implement
 
         public T GetById(string id)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(_connectionString))
             {
                 return connection.Get<T>(id);
             }
@@ -40,7 +41,7 @@ namespace AppRestaurant.Repository.Repository.Implement
 
         public IEnumerable<T> GetList()
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(_connectionString))
             {
                 return connection.GetAll<T>();
             }
@@ -48,7 +49,7 @@ namespace AppRestaurant.Repository.Repository.Implement
 
         public int Insert(T entity)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(_connectionString))
             {
                 return (int)connection.Insert(entity);
             }
@@ -56,7 +57,7 @@ namespace AppRestaurant.Repository.Repository.Implement
 
         public bool Update(T entity)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(_connectionString))
             {
                 return connection.Update(entity);
             }

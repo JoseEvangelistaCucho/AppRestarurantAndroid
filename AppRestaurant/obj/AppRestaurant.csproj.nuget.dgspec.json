@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Joze\\Desktop\\Proyecto Android\\AppRestarurantAndroid\\AppRestaurant\\AppRestaurant.csproj": {}
+    "C:\\Users\\Joze\\Desktop\\AppRestarurantAndroid\\AppRestaurant\\AppRestaurant.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Joze\\Desktop\\Proyecto Android\\AppRestarurantAndroid\\AppRestaurant\\AppRestaurant.csproj": {
+    "C:\\Users\\Joze\\Desktop\\AppRestarurantAndroid\\AppRestaurant\\AppRestaurant.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Joze\\Desktop\\Proyecto Android\\AppRestarurantAndroid\\AppRestaurant\\AppRestaurant.csproj",
+        "projectUniqueName": "C:\\Users\\Joze\\Desktop\\AppRestarurantAndroid\\AppRestaurant\\AppRestaurant.csproj",
         "projectName": "AppRestaurant",
-        "projectPath": "C:\\Users\\Joze\\Desktop\\Proyecto Android\\AppRestarurantAndroid\\AppRestaurant\\AppRestaurant.csproj",
+        "projectPath": "C:\\Users\\Joze\\Desktop\\AppRestarurantAndroid\\AppRestaurant\\AppRestaurant.csproj",
         "packagesPath": "C:\\Users\\Joze\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Joze\\Desktop\\Proyecto Android\\AppRestarurantAndroid\\AppRestaurant\\obj\\",
+        "outputPath": "C:\\Users\\Joze\\Desktop\\AppRestarurantAndroid\\AppRestaurant\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\programacion\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -68,6 +68,18 @@
               "target": "Package",
               "version": "[6.0.6, )"
             },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.29, )"
+            },
+            "MySql.Data.EntityFramework": {
+              "target": "Package",
+              "version": "[8.0.29, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.3.1, )"
@@ -91,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

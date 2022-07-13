@@ -23,8 +23,11 @@ namespace AppRestaurant.Models.ModelService
         public const string IDCLIENTE = "@IDCLIENTE";
         //////
         ///Modificar Cliente
-
-
+        public const string NOMBRE = "@Nombre";
+        public const string CODIGO = "@Codigo";
+        public const string INGREDIENTES = "@Ingredientes";
+        public const string DURACION = "@Duracion";
+        public const string NAME_USP_CREAR_RECETA = "uspCrearReceta";
 
 
 

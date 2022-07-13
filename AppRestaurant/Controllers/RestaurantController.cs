@@ -42,8 +42,12 @@ namespace AppRestaurant.Controllers
             return Ok(_unit.Parametros.GetByParametro(id));
         }
 
+        [HttpPost("Receta/CrearReceta")]
+        public IActionResult GetParameter([FromBody] Receta receta)
+        {
+            return Ok(_unit.Clientes.CrearReceta(receta));
+        }
 
-        
 
 
     }

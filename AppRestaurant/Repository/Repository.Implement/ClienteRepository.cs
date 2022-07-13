@@ -2,6 +2,7 @@
 using AppRestaurant.Models.ModelService;
 using Dapper;
 using Microsoft.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace AppRestaurant.Repository.Repository.Implement
 {
@@ -13,7 +14,7 @@ namespace AppRestaurant.Repository.Repository.Implement
 
         public ResponseHeader GetByDocumento(string nroDocumento, string password)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(_connectionString))
             {
                 var respuesta = new ResponseHeader();
                 var parameters = new DynamicParameters();
@@ -37,7 +38,7 @@ namespace AppRestaurant.Repository.Repository.Implement
 
         public ResponseHeader CreateUserCliente(Cliente cliente)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(_connectionString))
             {
                 var respuesta = new ResponseHeader();
                 var parameters = new DynamicParameters();
@@ -60,6 +61,33 @@ namespace AppRestaurant.Repository.Repository.Implement
                 respuesta.Mensaje = parameters.Get<String>(Constante.OV_MESSAGE);
                 cliente.id = idClienteGenerado;
                 respuesta.Detalle.Add(cliente.GetType().Name, cliente);
+
+                return respuesta;
+            }
+        }
+
+        public ResponseHeader CrearReceta(Receta receta)
+        {
+            using (var connection = new MySqlConnection(_connectionString))
+            {
+                var respuesta = new ResponseHeader();
+                var parameters = new DynamicParameters();
+               // int idClienteGenerado = 0;
+                parameters.Add(Constante.CODIGO, receta.Codigo);
+                parameters.Add(Constante.NOMBRE, receta.Nombre);
+                parameters.Add(Constante.INGREDIENTES, receta.Ingredientes);
+                parameters.Add(Constante.DURACION, receta.Duracion);
+                parameters.Add(Constante.OV_ESTADO, Constante.OV_ESTADO, System.Data.DbType.String, System.Data.ParameterDirection.Output);
+                parameters.Add(Constante.OV_MESSAGE, Constante.OV_MESSAGE, System.Data.DbType.String, System.Data.ParameterDirection.Output);
+               // parameters.Add(Constante.IDCLIENTE, idClienteGenerado, System.Data.DbType.Int32, System.Data.ParameterDirection.Output);
+
+                connection.Query(Constante.NAME_USP_CREAR_RECETA, parameters, commandType: System.Data.CommandType.StoredProcedure);
+
+               // idClienteGenerado = parameters.Get<Int32>(Constante.IDCLIENTE);
+                respuesta.Estado = parameters.Get<String>(Constante.OV_ESTADO);
+                respuesta.Mensaje = parameters.Get<String>(Constante.OV_MESSAGE);
+              //  cliente.id = idClienteGenerado;
+              //  respuesta.Detalle.Add(cliente.GetType().Name, cliente);
 
                 return respuesta;
             }
